@@ -1,4 +1,11 @@
 pipeline:
+  docker:
+    image: plugins/docker
+    username: ${DOCKER_USERNAME}
+    password: ${DOCKER_PASSWORD}
+    repo: jcantosz/watson
+    tags: latest
+
   deploy:
     image: jcantosz/k8s
     USER: jcantosz@us.ibm.com
