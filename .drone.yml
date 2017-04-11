@@ -1,0 +1,16 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    username: jcantosz
+    password: $DOCKER_PW
+    repo: jcantosz/watson
+    tags: latest
+
+  deploy:
+    image: jcantosz/k8s
+    USER: jcantosz@us.ibm.com
+    ORG: CloudDevOps
+    SPACE: JobGate
+    CLUSTER: Adam
+    YAML: car-dashboard-pod.yml
+
